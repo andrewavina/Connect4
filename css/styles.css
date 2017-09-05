@@ -1,3 +1,8 @@
+body {
+    text-align: center;
+    color: #4F4FF6;
+}
+
 h1 {
     color: blue;
     
@@ -9,13 +14,21 @@ h1 {
 
 #player-1 {
     display: block;
+    margin: 0 auto;
 }
 
 #player-2 {
     display: block;
+    margin: 0 auto;
 }
 
 #submit {
     width: 290px;
     margin: 10px 0 30px 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #fff;
+    background-color: #3DC4A7;
+    border: none;
+    border-radius: 5px;
 }
