@@ -29,7 +29,7 @@ var $row = $(".row")
 
 var $circles = $(".circle")
 
-var $buttonsRow = $(".buttons-row")
+var $messages = $(".messages")
 
 //MAIN GAME FUNCTION - all other functions are nested inside 
 $(document).ready(function(){
@@ -125,7 +125,7 @@ $(document).ready(function(){
             $pickColor.fadeOut()
             $row.fadeOut()
             setTimeout(function(){
-                $buttonsRow.append("<h1 style='font-size: 72px; margin: 0 auto'>It's a Draw!</h1>")
+                $messages.append("<h1 style='font-size: 72px; margin: 0 auto'>It's a Draw!</h1>")
                 playAgain() //If draw, show Play Again button
             })
         }
@@ -246,7 +246,7 @@ $(document).ready(function(){
             $row.fadeOut()
             setTimeout(function(){
                 $('#subhead').remove()
-                $buttonsRow.append("<h1 style='font-size: 6em; margin: 13vh 0 25px 0'>"+ winningToken + " wins!</h1>").fadeIn()
+                $messages.append("<h1 style='font-size: 6em; margin: 13vh 0 25px 0'>"+ winningToken + " wins!</h1>").fadeIn()
                 playAgain()
             })
             winner = true //This stops the game.
@@ -257,7 +257,7 @@ $(document).ready(function(){
             $row.fadeOut()
             setTimeout(function(){
                 $('#subhead').remove() 
-                $buttonsRow.append("<h1 style='font-size: 6em; margin: 13vh 0 25px 0'>"+ winningToken + " wins!</h1>")
+                $messages.append("<h1 style='font-size: 6em; margin: 13vh 0 25px 0'>"+ winningToken + " wins!</h1>")
                  playAgain()
              })
             winner = true //This stops the game.
@@ -269,7 +269,7 @@ $(document).ready(function(){
     function playAgain (){
         setTimeout(function(){
             $('#subhead').remove()
-            $buttonsRow.append("<button id = 'play-again'>Play Again?</button>") // Adds a "Play Again" button
+            $messages.append("<button id = 'play-again'>Play Again?</button>") // Adds a "Play Again" button
             $("#play-again").click(function(){ //On click, reload the window
             console.log("clicked")
             location.reload()
