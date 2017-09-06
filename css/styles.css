@@ -2,7 +2,8 @@ html {
 	font-family: "Montserrat", Futura, Helvetica, sans-serif;
 	text-align: center;
 	-webkit-font-smoothing: subpixel-antialiased;
-	color: #333;
+    color: #333;
+    
 }
 
 #title {
@@ -15,7 +16,7 @@ html {
 	text-align: center;
 }
 
-.buttons-row {
+.messages {
 	width: 100%;
 	margin: 0 auto;
 }
