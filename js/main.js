@@ -128,7 +128,47 @@ $(document).ready(function(){
             })
         })
     }
-  
+    //below are all functions that check for win and end the game
+    function checkWinner (columnNumber, winningToken){
+        //columnNumber is the number of the column that a token has been dropped in
+        //winningToken is who played the token
+            //3 calls below check for wins horizontally, vertically, and diagonally.
+            checkColumn(columnNumber, winningToken)
+            checkRow(winningToken)
+            check_diagonal (winningToken)
+            if (moves === 42) { //"if" statement that checks for draw
+                $pickColor.fadeOut()
+                $row.fadeOut()
+                setTimeout(function() {
+                    $buttonsRow.append("<h1 style='font-size: 72px; margin: 13vh 0 25px 0'>It's a Draw!</h1>")
+                    playAgain()
+                })
+            }
+        }
+    // for columns, only check for a win in the column that the players chose.
+    function checkColumn(columnNumber, winningToken){
+        for (var i = 0; i < 7; i+=1){
+            if (columnNumber === "col-" + i){
+                // local var with all of the classes with "col-" + i
+                var column = document.getElementsByClassName("col-" + i)
+                // make an array with the above elements (also local)
+                var columnArray = jQuery.makeArray (column)
+                // check the column from the bottom up
+                for (var j = columnArray.length - 1; j > 1; j--){
+                    console.log(j)
+                    if (columnArray[j].getAttribute("data-name") === winningToken &&
+                        columnArray[j-1].getAttribute("data-name") === winningToken &&
+                        columnArray[j-2].getAttribute("data-name") === winningToken &&
+                        columnArray[j-3].getAttribute("data-name") === winningToken){
+                        setTimeout(function(){
+                            // announce winner if there are 4 consecutively same tokens
+                            announceWinner(winningToken)
+                        }
+                        }
+                }
+            }
+        }
+    }
 })
 
 
