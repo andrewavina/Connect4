@@ -77,6 +77,7 @@ $(document).ready(function(){
         for (var i = 0; i < $circles.length; i+=1){
             $circles.eq(i).attr("data-value",i) // Attach attribute "data-value" as class for all circles
         }
+        //call switch player function here
     } 
 })
 
