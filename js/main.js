@@ -97,7 +97,22 @@ $(document).ready(function(){
                     } 
                 }
             }
-    }
+        }
+    //function that adds player's token to game board and records it
+    function makeMove(position, newClassname, token){
+        //position is the most bottom and non-occupied spot of the particular column the player chose.
+        //newClassName is the class that the spot should take to add background color.
+        //token is which player (player 1 or 2)
+        if (token === player1.dataName) {     //check whose token just got played
+            player1Moves.push(parseInt($(position).attr("data-value")))
+            $(position).addClass(newClassname)
+            $(position).attr("data-name", token) // if player 1 chose, give circle data-name "Player 1"
+            } else if (token === player2.dataName) {
+                player2Moves.push(parseInt($(position).attr("data-value")))
+                $(position).addClass(newClassname)
+                $(position).attr("data-name", token) // if player 2 chose, give circle data-name "Player 2"
+            }
+        }
 })
 
 
