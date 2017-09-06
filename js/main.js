@@ -79,6 +79,25 @@ $(document).ready(function(){
         }
         //call switch player function here
     } 
+    //this function checks to see if the most bottom spot and up in each column is taken or not. If not, it drops the current player's token to the next available spot in the column if any. This function is only invoked after a click.
+    function checkSpot(columnNumber, newClassname, token){
+        //columnNumber is the column number of the spot the user clicked.
+        //newClassname is the class that the spot should take to add the token (circle.background-color) to.
+        //token is player 1 or player 2's chosen circle
+            for (var i = 0; i < 7; i+=1){
+                if (columnNumber === "col-" + i){
+                    var column = document.getElementsByClassName("col-" + i) //local var with all of the classes with "col-" + i
+                    var columnArray = jQuery.makeArray(column); //make local array with the above elements
+                    //check from the last spot of the column array and if the most bottom is not taken, populate that spot.
+                    for (var j = columnArray.length - 1; j > -1; j--){
+                        if (columnArray[j].getAttribute("data-name") === "nothing"){
+                            makeMove(columnArray[j], newClassname, token)
+                            break
+                        }
+                    } 
+                }
+            }
+    }
 })
 
 
