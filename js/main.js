@@ -1,38 +1,38 @@
 console.log("JS Loaded")
 
 //global variables
-var player_1 = {
-    "mark_color" : "blue",
-    "data_name" : "Player 1",
+var player1 = {
+    "tokenColor" : "blue",
+    "dataName" : "Player 1",
     "wins" : 0
 }
 
-var player_1_moves = []
+var player1Moves = []
 
-var player_2 = {
+var player2 = {
     "mark_color" : "red",
     "data_name" : "Player 2",
     "wins" : 0
 }
 
-var player_2_moves = []
+var player2Moves = []
 
-var num_of_players = 2
+var numOfPlayers = 2
 
 var winner = false
 
 var moves = 0 // to check if there is a draw at the end of the game
 
-var $pick_color = $("#pick-color")
+var $pickColor = $("#pick-color")
 
 var $row = $(".row")
 
 var $circles = $(".circle")
 
-var $buttons_row = $(".buttons-row")
+var $buttonsRow = $(".buttons-row")
 
 // Diagonal wins Array - All possible combos of diagonal wins
-var diagonal_win = [
+var diagonalWin = [
     [0, 8, 16, 24],
     [1, 9, 17, 25],
     [2, 10, 18, 26],
@@ -61,9 +61,8 @@ var diagonal_win = [
 
 //MAIN GAME FUNCTION 
 $(document).ready(function(){
-    make_board()
-    // create board function
-    function make_board(){ 
+    makeBoard()
+    function makeBoard(){ // create board function
         for (var i = 0; i < 6; i++){ //makes 6 rows and assign each a row number
             for (var j = 0; j < 7; j++){ //makes 7 columns and assign each a column number
             var $circle = $("div class = 'circle' data-name = 'nothing'></div>") // Adding each circle as a sub <div> to the main "#row" <div> on page. Found idea to assign each circle with with the data-name "nothing". The data-name will change when that particular circle is chosen.
@@ -73,7 +72,11 @@ $(document).ready(function(){
             $row.css("background-color", "yellow") //gives the bracket game board color yellow
             }
         }
-        
+        //Use data-value to give all circles a specific number between 0-41 (i.e. 42 total circles in play)
+        var $circles = $(".circle")
+        for (var i = 0; i < $circles.length; i+=1){
+            $circles.eq(i).attr("data-value",i) // Attach attribute "data-value" as class for all circles
+        }
     } 
 })
 
