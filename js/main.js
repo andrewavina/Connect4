@@ -59,7 +59,7 @@ $(document).ready(function(){
         //token is player 1 or player 2's chosen circle
         for (var i = 0; i < 7; i+=1){ 
             if (columnNumber === "col-" + i){
-                var column = document.getElementsByClassName("col-" + i) // local var with all of the classes with "col-" + i
+                var column = document.getElementsByClassName("col-" + i) //Local var with all of the classes with "col-" + i
                 var columnArray = jQuery.makeArray (column) //make local array with the above elements
                 // check from the last spot of the column array and if the most bottom is not taken, populate that spot.
                 for (var j = columnArray.length - 1; j > -1; j--){
@@ -136,23 +136,20 @@ $(document).ready(function(){
         }
     }
     
-    // for columns, only check for a win in the column that the players chose.
+    //For columns also, only check for a win in the row that the players chose.
     function checkColumn (columnNumber, winningToken){
         for (var i = 0; i < 7; i+=1){
             if (columnNumber === "col-" + i){
-                // local var with all of the classes with "col-" + i
-                var column = document.getElementsByClassName("col-" + i)
-                // make an array with the above elements (also local).
-                var columnArray = jQuery.makeArray (column)
-                // check the column from the bottom up.
+                var column = document.getElementsByClassName("col-" + i) //Local var with all of the classes with "col-" + i
+                var columnArray = jQuery.makeArray (column) //Make local array with the above elements
+                //Check the column from the bottom up
                 for (var j = columnArray.length - 1; j > 1; j--){
                     console.log(j)
                     if (columnArray[j].getAttribute("data-name") === winningToken &&
                         columnArray[j-1].getAttribute("data-name") === winningToken &&
                         columnArray[j-2].getAttribute("data-name") === winningToken &&
-                        columnArray[j-3].getAttribute("data-name") === winningToken){
+                        columnArray[j-3].getAttribute("data-name") === winningToken){ //Announce winner if there are 4 consecutively same tokens
                         setTimeout(function(){
-                            // announce winner if there are 4 consecutively same tokens.
                             announceWinner(winningToken)
                         })
                         break
@@ -162,13 +159,13 @@ $(document).ready(function(){
         }
     }
     
-    // for rows also, only check for a win in the row that the players chose.
+    //For rows also, only check for a win in the row that the players chose.
     function checkRow(winningToken){
         if (winningToken === player1.dataName){
-            // sort the array of the player's moves (numbers) in ascending order.
+            //Sort the array of the player's moves (numbers) in ascending order.
             player1Moves.sort()
             for (var i = 0; i < player1Moves.length - 2; i+=1){
-            // make the limit of i to the array's length - 2 so that there are no undefined objects that the computer tries to compare.
+            //Make the limit of i to the array's length - 2 so that there are no undefined objects that the computer tries to compare.
                 var firstMatch = player1Moves[i]
                 var secondMatch = player1Moves[i+1]
                 var thirdMatch = player1Moves[i+2]
