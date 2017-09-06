@@ -1,6 +1,6 @@
 console.log("JS loaded")
 
-// global variables
+//Global variables
 var player1 = {
         "tokenColor" : "blue",
         "dataName" : "Player 1",
@@ -21,7 +21,7 @@ var numOfPlayers = 2
     
 var winner = false
     
-var moves = 0 // to check if there is a draw 
+var moves = 0 //To check if there is a draw 
   
 var $pickColor = $("#pick-color")
 
@@ -34,14 +34,14 @@ var $buttonsRow = $(".buttons-row")
 //MAIN GAME FUNCTION - all other functions are nested inside 
 $(document).ready(function(){
     makeBoard()
-    function makeBoard(){ //create board function
-        for (var i = 0; i < 6; i+=1){ //makes 6 rows and assign each a row number
-            for (var j = 0; j < 7; j+=1){ //makes 7 columns and assign each a column number
+    function makeBoard(){ //Create board function
+        for (var i = 0; i < 6; i+=1){ //Makes 6 rows and assign each a row number
+            for (var j = 0; j < 7; j+=1){ //Makes 7 columns and assign each a column number
                 var $circle = $("<div class = 'circle' data-name = 'nothing'></div>") // Adding each circle as a sub <div> to the main "#row" <div> on page. Found idea to assign each circle with with the data-name "nothing". The data-name will change when that particular circle is chosen. 
-                $circle.addClass("col-" + j) //adding specific column to each circle as a class
-                $circle.addClass("row-" + i) //adding specific row to each circle as a class
-                $row.append($circle) // adds circle to page
-                $row.css("background-color", "yellow") //gives the bracket game board color yellow
+                $circle.addClass("col-" + j) //Adding specific column to each circle as a class
+                $circle.addClass("row-" + i) //Adding specific row to each circle as a class
+                $row.append($circle) //Adds circle to page
+                $row.css("background-color", "yellow") //Gives the bracket game board color yellow
             }
         }
         //Use data-value to give all circles a specific number between 0-41 (i.e. 42 total circles in play)
@@ -52,7 +52,7 @@ $(document).ready(function(){
             switchPlayer()
     }
     
-    //this function checks to see if the most bottom spot and up in each column is taken or not. If not, it drops the current player's token to the next available spot in the column if any. This function is only invoked after a click.
+    //This function checks to see if the most bottom spot and up in each column is taken or not. If not, it drops the current player's token to the next available spot in the column if any. This function is only invoked after a click.
     function checkSpot(columnNumber, newClassname, token){
         //columnNumber is the column number of the spot the user clicked
         //newClassname is the class that the spot should take to add the token (circle.background-color) to.
@@ -61,7 +61,7 @@ $(document).ready(function(){
             if (columnNumber === "col-" + i){
                 var column = document.getElementsByClassName("col-" + i) //Local var with all of the classes with "col-" + i
                 var columnArray = jQuery.makeArray (column) //make local array with the above elements
-                // check from the last spot of the column array and if the most bottom is not taken, populate that spot.
+                //Check from the last spot of the column array and if the most bottom is not taken, populate that spot.
                 for (var j = columnArray.length - 1; j > -1; j--){
                     if (columnArray[j].getAttribute("data-name") === "nothing"){
                         makeMove(columnArray[j], newClassname, token)
@@ -72,66 +72,61 @@ $(document).ready(function(){
         }
     }
 
-    //function that adds player's token to game board
+    //Function that adds player's token to game board
     function makeMove (position, newClassname, token) {
         //position is the most bottom and non-occupied spot of the particular column the player chose.
         //newClassName is the class that the spot should take to add background color.
         //token is which player (player 1 or 2)
-        if (token === player1.dataName){ //check whose token just got played
+        if (token === player1.dataName){ //Check whose token just got played
             player1Moves.push(parseInt($(position).attr("data-value")))
             $(position).addClass(newClassname)
-            $(position).attr("data-name", token) //if player 1 chose, give circle data-name "Player 1"
+            $(position).attr("data-name", token) //If player 1 chose circle, give circle data-name "Player 1"
         } else if (token === player2.dataName){
             player2Moves.push(parseInt($(position).attr("data-value")))
             $(position).addClass(newClassname)
-            $(position).attr("data-name", token) // if player 2 chose, give circle data-name "Player 2"
+            $(position).attr("data-name", token) //If player 2 chose circle, give circle data-name "Player 2"
             }
         }
-    //switch players function
+    //Switch players function
     function switchPlayer(){ 
         var $allCircles = $(".circle")
-        var playerClick = 1 //makes Player 1 be first player up
-        //nested function below only allows circles with data-name "nothing" able to be chosen by players
+        var playerClick = 1 //Makes Player 1 be first player up
+        //Nested function below only allows circles with data-name "nothing" able to be chosen by players
         $.each($allCircles, function (index, value){
             $allCircles.eq(index).click(function(){
                 if ($(this).attr("data-name") === "nothing"){
-                    // check if spot available for the player 1
+                    //Check if spot available for player 1's token
                     if (playerClick === 1){
                         checkSpot($(this).attr("class").split(" ")[1], "circle-background-color-" + player1.tokenColor, player1.dataName)
                         playerClick = 2
-                        // later, if moves === 42, it will mean that there is a draw.
                         moves +=1
-                        // check for win after every turn.
-                        checkWinner ($(this).attr("class").split(" ")[1], player1.dataName)
+                        checkWinner ($(this).attr("class").split(" ")[1], player1.dataName) //Check for win after every turn.
                     } 
-                        else { // check if spot available for the player 2
+                        else { //Check if spot available for player 2's token
                             checkSpot($(this).attr("class").split(" ")[1], "circle-background-color-" + player2.tokenColor, player2.dataName)
                             playerClick = 1
-                            // later, if moves === 42, it will mean that there is a draw.
                             moves +=1
-                            // check for win after every turn.
-                            checkWinner($(this).attr("class").split(" ")[1], player2.dataName)
+                            checkWinner($(this).attr("class").split(" ")[1], player2.dataName) //Check for win after every turn.
                         }
                     }
                 })
             })
         }
-    //below are all functions that check for win and end the game
-    // call this function after each turn 
+    //Below are all functions that check for win and end the game
+    //Call this function after each turn 
     function checkWinner (columnNumber, winningToken){
-        // columnNumber is the number of the column that a token has been made,
-        // winningToken is who made the token.
+        //ColumnNumber is the number of the column that a token has been made,
+        //WinningToken is who made the token.
         //3 calls below check for wins horizontally, vertically, and diagonally
         checkColumn(columnNumber, winningToken)
         checkRow(winningToken)
         check_diagonal (winningToken)
-        if (moves === 42){ // check if there is a draw.
+        if (moves === 42){ //Check if there is a draw.
             $pickColor.fadeOut()
             $row.fadeOut()
             setTimeout(function(){
                 $buttonsRow.append("<h1 style='font-size: 72px; margin: 0 auto'>It's a Draw!</h1>")
-                // invoke the play again function when there is a draw.
-                playAgain()
+                playAgain() //If draw, show Play Again button
             })
         }
     }
