@@ -139,27 +139,3 @@ h2 {
 .circle-background-color-red:hover {
 	border: 3px solid #C73D47;
 }
-
-@media (max-width: 785px) {
-
-	#disclaimer {
-		display: inline;
-	}
-
-	.container {
-		padding-top: 20vh;
-	}
-
-	#title {
-		display: none;
-	}
-
-	.row {
-		display:none;
-	}
-
-	.buttons-row {
-		display:none;
-	}
-
-}
