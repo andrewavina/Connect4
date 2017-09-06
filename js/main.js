@@ -23,7 +23,15 @@ var winner = false
 
 var moves = 0 // to check if there is a draw at the end of the game
 
-// All possible combos of diagonal wins
+var $pick_color = $("#pick-color")
+
+var $row = $(".row")
+
+var $circles = $(".circle")
+
+var $buttons_row = $(".buttons-row")
+
+// Diagonal wins Array - All possible combos of diagonal wins
 var diagonal_win = [
     [0, 8, 16, 24],
     [1, 9, 17, 25],
@@ -50,5 +58,24 @@ var diagonal_win = [
     [19, 25, 31, 37],
     [20, 26, 32, 38]
 ];
+
+//MAIN GAME FUNCTION 
+$(document).ready(function(){
+    make_board()
+    // create board function
+    function make_board(){ 
+        for (var i = 0; i < 6; i++){ //makes 6 rows and assign each a row number
+            for (var j = 0; j < 7; j++){ //makes 7 columns and assign each a column number
+            var $circle = $("div class = 'circle' data-name = 'nothing'></div>") // Adding each circle as a sub <div> to the main "#row" <div> on page. Found idea to assign each circle with with the data-name "nothing". The data-name will change when that particular circle is chosen.
+            $circle.addClass("col-" +j) //adding specific column to each circle as a class
+            $circle.addClass("row-" + i) //adding specific row to each circle as a class
+            $row.append($circle) // adds circle to page
+            $row.css("background-color", "yellow") //gives the bracket game board color yellow
+            }
+        }
+        
+    } 
+})
+
 
 
