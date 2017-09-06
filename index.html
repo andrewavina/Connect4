@@ -13,19 +13,21 @@
         
 </head>
 <body>
-    <div class="container">
-        <h1>Connect 4</h1> <!--main title-->
-        <div class="buttons-row">    <!-- Player names screen -->
-            <h2 id="question">Player Names</h2>
-            <input id="player-1" placeholder="Player 1 First Name">
-            <input id="player-2" placeholder="Player 2 First Name">
-            <button type="submit" id="submit">Start Game</button>
-        </div>  
-        <div class="row"></div> <!--game board-->
-    </div>
-    
-    
-    
+	<div class = "container">
+		<h1 id = "title" onclick = "location.reload();">Connect 4<i class="fa fa-connectdevelop"></i>&nbsp;<i class="fa fa-th-large fa-lg"></i></h1>
+		<!-- <h1 id = "disclaimer">Please make your browser bigger!</h1> -->
+		<!-- <div class = "buttons-row">
+			<h2 id = "question"></h2> -->
+			<!-- <button id = "two-players-btn">Ready to Play?</button> -->
+			<!-- <button id = "one-player-btn">Bring on the Computer</button> -->
+            <h2 id = "pick-color"></h2>
+            <h2 id="subhead">Player 1 is <span style='color: blue;'>Blue</span>, and Player 2 is <span style='color: red;'>Red</span>.</br>Player 1 goes first.</h2>
+			<!-- <button id = "red-btn">Hotter than the Sun</button>
+			<button id = "blue-btn">Ice Cold</button> -->
+		</div>
+		<div class = "row">
+		</div>
+	</div>
     
     <script src="js/main.js"></script>
 </body>
