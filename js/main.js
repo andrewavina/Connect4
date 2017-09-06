@@ -77,7 +77,7 @@ $(document).ready(function(){
         for (var i = 0; i < $circles.length; i+=1){
             $circles.eq(i).attr("data-value",i) // Attach attribute "data-value" as class for all circles
         }
-        //call switch player function here
+        switchPlayer()
     } 
     //this function checks to see if the most bottom spot and up in each column is taken or not. If not, it drops the current player's token to the next available spot in the column if any. This function is only invoked after a click.
     function checkSpot(columnNumber, newClassname, token){
@@ -113,6 +113,22 @@ $(document).ready(function(){
                 $(position).attr("data-name", token) // if player 2 chose, give circle data-name "Player 2"
             }
         }
+    function switchPlayer(){    //switch player function
+        var $allCircles = $(".circle")
+        var playerClick = 1 //makes Player 1 be first player up
+        //nested function below only allows circles with data-name "nothing" able to be chosen by players
+        $.each($allCircles, function (index, value) {
+            $allCircles.eq(index).click(function(){
+                if (playerClick === 1) { //check spot for the first player
+                    checkSpot($(this).attr("class").split(" ")[1], "circle-background-color-" + player1.tokenColor, player1.dataName)
+                    playerClick = 2
+                    moves +=1 // here, if moves equal 42, game will be a draw
+                    checkWinner($(this).attr("class").split(" ")[1], player2.dataName) //check for winner
+                }
+            })
+        })
+    }
+  
 })
 
 
