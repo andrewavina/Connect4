@@ -60,7 +60,7 @@ $(document).ready(function(){
         for (var i = 0; i < 7; i+=1){ 
             if (columnNumber === "col-" + i){
                 var column = document.getElementsByClassName("col-" + i) //Local var with all of the classes with "col-" + i
-                var columnArray = jQuery.makeArray (column) //make local array with the above elements
+                var columnArray = jQuery.makeArray (column) //Make local array with the above elements
                 //Check from the last spot of the column array and if the most bottom is not taken, populate that spot.
                 for (var j = columnArray.length - 1; j > -1; j--){
                     if (columnArray[j].getAttribute("data-name") === "nothing"){
@@ -74,9 +74,9 @@ $(document).ready(function(){
 
     //Function that adds player's token to game board
     function makeMove (position, newClassname, token) {
-        //position is the most bottom and non-occupied spot of the particular column the player chose.
-        //newClassName is the class that the spot should take to add background color.
-        //token is which player (player 1 or 2)
+    //"position" is the most bottom and non-occupied spot of the particular column the player chose.
+    //"newClassName" is the class that the spot should take to add background color.
+    //"token" is which player (player 1 or 2)
         if (token === player1.dataName){ //Check whose token just got played
             player1Moves.push(parseInt($(position).attr("data-value")))
             $(position).addClass(newClassname)
@@ -115,8 +115,8 @@ $(document).ready(function(){
     //Below are all functions that check for win and end the game
     //Call this function after each turn 
     function checkWinner (columnNumber, winningToken){
-        //ColumnNumber is the number of the column that a token has been made,
-        //WinningToken is who made the token.
+    //"columnNumber" is the number of the column that a token has been made,
+    //"winningToken" is who made the token.
         //3 calls below check for wins horizontally, vertically, and diagonally
         checkColumn(columnNumber, winningToken)
         checkRow(winningToken)
@@ -157,10 +157,8 @@ $(document).ready(function(){
     //For rows also, only check for a win in the row that the players chose.
     function checkRow(winningToken){
         if (winningToken === player1.dataName){
-            //Sort the array of the player's moves (numbers) in ascending order.
-            player1Moves.sort()
-            for (var i = 0; i < player1Moves.length - 2; i+=1){
-            //Make the limit of i to the array's length - 2 so that there are no undefined objects that the computer tries to compare.
+            player1Moves.sort() //Sort the array of the player's moves (numbers) in ascending order.
+            for (var i = 0; i < player1Moves.length - 2; i+=1){ //Make the limit of i to the array's length - 2 so that there are no undefined objects that the computer tries to compare.
                 var firstMatch = player1Moves[i]
                 var secondMatch = player1Moves[i+1]
                 var thirdMatch = player1Moves[i+2]
@@ -175,10 +173,8 @@ $(document).ready(function(){
                 }
             }
         } else if (winningToken === player2.dataName){
-            //Sort the array of the player's moves (numbers) in ascending order.
-            player2Moves.sort()
-            for (var i = 0; i < player2Moves.length - 2; i+=1){
-            //Make the limit of i to the array's length - 2 so that there are no undefined objects that the computer tries to compare.
+            player2Moves.sort() //Sort the array of the player's moves (numbers) in ascending order
+            for (var i = 0; i < player2Moves.length - 2; i+=1){ //Make the limit of i to the array's length - 2 so that there are no undefined objects that the computer tries to compare
                 var firstMatch = player2Moves[i]
                 var secondMatch = player2Moves[i+1]
                 var thirdMatch = player2Moves[i+2]
@@ -195,7 +191,7 @@ $(document).ready(function(){
         }
     }
     
-    //For diagonals, go through all possible wins instead of just checking for the spot that the players chose.
+    //For possible diagonal wins, go through all possible wins instead of just checking for the spot that the players chose
     function check_diagonal (winningToken){
         //An array of all possible diagonal combo wins
         var diagonalWin = [    
@@ -225,7 +221,7 @@ $(document).ready(function(){
             [20, 26, 32, 38]
         ]
         for (var i = 0; i < diagonalWin.length; i+=1) {
-            //Data-value is assigned to each circle (div) and goes from 0 to 41.
+        //Data-value is assigned to each circle (div) and goes from 0 to 41.
             var $check_1 = $("div[data-value='" + diagonalWin[i][0] + "']")
             var $check2 = $("div[data-value='" + diagonalWin[i][1] + "']")
             var $check_3 = $("div[data-value='" + diagonalWin[i][2] + "']")
@@ -242,7 +238,7 @@ $(document).ready(function(){
             }
         }
     }
-    //Announce winner
+    //Announce winner function
     function announceWinner(winningToken){
         if (winningToken === player1.dataName){
             winningToken = ("Player 1")
@@ -269,11 +265,11 @@ $(document).ready(function(){
         } 
     }
     
-    //Play again button
+    //Play again function
     function playAgain (){
         setTimeout(function(){
             $('#subhead').remove()
-            $buttonsRow.append("<button id = 'play-again'>Play Again?</button>")
+            $buttonsRow.append("<button id = 'play-again'>Play Again?</button>") // Adds a "Play Again" button
             $("#play-again").click(function(){ //On click, reload the window
             console.log("clicked")
             location.reload()
