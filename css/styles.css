@@ -6,12 +6,13 @@ html {
     
 }
 
-#title {
-	
-}
-
 .container {
 	width: 670px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#title {
 	margin: 0 auto;
 	text-align: center;
 }
@@ -53,7 +54,7 @@ button:focus {
 	margin-left: 10px;
 }
 
-#red-btn, #blue-btn {
+#red-btn, #yellow-btn {
 	display: none;
 }
 
@@ -123,13 +124,13 @@ h2 {
 
 }
 
-.circle-background-color-blue {
-	background-color: #4189C7;
-	border: 3px solid #4189C7;
+.circle-background-color-yellow {
+	background-color: yellow;
+	border: 3px solid yellow;
 }
 
-.circle-background-color-blue:hover {
-	border: 3px solid #4189C7;
+.circle-background-color-yellow:hover {
+	border: 3px solid yellow;
 }
 
 .circle-background-color-red {

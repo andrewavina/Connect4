@@ -2,7 +2,7 @@ console.log("JS loaded")
 
 //Global variables
 var player1 = {
-        "tokenColor" : "blue",
+        "tokenColor" : "yellow",
         "dataName" : "Player 1",
         "wins" : 0
     }
@@ -41,7 +41,7 @@ $(document).ready(function(){
                 $circle.addClass("col-" + j) //Adding specific column to each circle as a class
                 $circle.addClass("row-" + i) //Adding specific row to each circle as a class
                 $row.append($circle) //Adds circle to page
-                $row.css("background-color", "yellow") //Gives the bracket game board color yellow
+                $row.css("background-color", "blue") //Gives the bracket game board color blue
             }
         }
         //Use data-value to give all circles a specific number between 0-41 (i.e. 42 total circles in play)
