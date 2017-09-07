@@ -13,13 +13,13 @@ Choose which circle slot to place your token in by clicking on its column with y
 Once you click on the column you wish to drop your token into, the token will go to the bottom most available slot. 
 
 The game ends when either a player has at least 4 tokens in a row a.k.a. "connects 4", or if every slot is taken up without any connect 4's - in which case the game is a draw. 
-
+--
 ### Development & Technologies
 
 This Connect 4 game is being built using HTML, CSS, JavaScript, and the jQuery library.
 
 Fonts used: "Baloo Tammudu" from Google Fonts (<link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">)
-
+--
 ### Approach Taken
 - Began with user stories, wireframing on piece of paper, and looking at examples online
 - Wrote out/psuedocoded the needed objects and JavaScript functionality that would be needed to make the game work and meet user stories.
@@ -28,10 +28,10 @@ Fonts used: "Baloo Tammudu" from Google Fonts (<link href="https://fonts.googlea
 - Then, focused on the hardest and most time-consuming aspect of this game which was the logic for figuring out who wins the game. 
 - After getting that logic, set up the pop up to show who won and reset/play again button.
 - Finishing up on keeping an ongoing track of the score and styling the game to make it look better than plain.
-
+--
 ### Installation Instructions
 This version of Connect 4 is playable on any web browser. 
-
+--
 ### Unsolved Problems
 - Scoreboard
 - Reset during game button
