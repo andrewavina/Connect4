@@ -1,20 +1,31 @@
+body {
+    background: rgb(93, 87, 87);
+}
+
 html {
 	font-family: "Montserrat", Futura, Helvetica, sans-serif;
-	text-align: center;
+
 	-webkit-font-smoothing: subpixel-antialiased;
     color: #333;
     
 }
 
+#title {
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid blue;
+    padding: 0 0 0 0;
+}
+
 .container {
 	width: 670px;
 	margin: 0 auto;
-	text-align: center;
+    text-align: center;
 }
 
-#title {
-	margin: 0 auto;
-	text-align: center;
+aside {
+    background: red;
+    float: right;
 }
 
 .messages {

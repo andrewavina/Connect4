@@ -13,13 +13,19 @@
         crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class = "container">
-        <h1 id="title">Connect 4</h1>
-        <div class="messages">
-            <h2 id="subhead">Player 1 is <span style='color: yellow;'>Yellow</span></br>Player 2 is <span style='color: red;'>Red</span>.</br></br>Player 1 goes first.</h2>
+    <h1 id="title">Connect 4</h1> <!--page header-->
+    <aside id="aside">
+        <div id="rules">How to Play</div>
+        <div id="scoreboard">Score</div>
+    </aside>
+    <div class = "container">    
+        <div class = "row"></div> <!--game board-->
+        
+        <div class="messages"> <!--dynamic messages/updates show here-->
+            <h2 id="subhead">Player 1 is <span style='color: yellow;'>Yellow</span>. Player 2 is <span style='color: red;'>Red</span>.<br> Player 1 goes first.</h2>
         </div>
 
-        <div class = "row"></div> <!--game board-->
+        
     </div>
     
     <script src="js/main.js"></script>
