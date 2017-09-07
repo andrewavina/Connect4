@@ -1,5 +1,13 @@
 console.log("JS loaded")
 
+//How to play button
+
+
+//Reset button function
+$("#resetBtn").click(function(){ 
+    location.reload()
+})
+
 //Global variables
 var player1 = {
         "tokenColor" : "yellow",
@@ -81,11 +89,13 @@ $(document).ready(function(){
             player1Moves.push(parseInt($(position).attr("data-value")))
             $(position).addClass(newClassname)
             $(position).attr("data-name", token) //If player 1 chose circle, give circle data-name "Player 1"
+            
         } else if (token === player2.dataName){
             player2Moves.push(parseInt($(position).attr("data-value")))
             $(position).addClass(newClassname)
             $(position).attr("data-name", token) //If player 2 chose circle, give circle data-name "Player 2"
             }
+
         }
     //Switch players function
     function switchPlayer(){ 
@@ -246,7 +256,7 @@ $(document).ready(function(){
             $row.fadeOut()
             setTimeout(function(){
                 $('#subhead').remove()
-                $messages.append("<h1 style='font-size: 6em; margin: 13vh 0 25px 0'>"+ winningToken + " wins!</h1>").fadeIn()
+                $messages.append("<h1 style='color: blue;font-size: 72px; margin: 0 auto'>"+ winningToken + " wins!</h1>").fadeIn()
                 playAgain()
             })
             winner = true //This stops the game.
@@ -257,7 +267,7 @@ $(document).ready(function(){
             $row.fadeOut()
             setTimeout(function(){
                 $('#subhead').remove() 
-                $messages.append("<h1 style='font-size: 6em; margin: 13vh 0 25px 0'>"+ winningToken + " wins!</h1>")
+                $messages.append("<h1 style='color: blue;font-size: 72px; margin: 0 auto'>"+ winningToken + " wins!</h1>")
                  playAgain()
              })
             winner = true //This stops the game.
@@ -275,4 +285,5 @@ $(document).ready(function(){
             location.reload()
         })
         })
+    
     }})
