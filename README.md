@@ -18,7 +18,7 @@ The game ends when either a player has at least 4 tokens in a row a.k.a. "connec
 
 This Connect 4 game is being built using HTML, CSS, JavaScript, and the jQuery library.
 
-Fonts used: TBD
+Fonts used: "Baloo Tammudu" from Google Fonts (<link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">)
 
 ### Approach Taken
 - Began with user stories, wireframing on piece of paper, and looking at examples online
