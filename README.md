@@ -1,6 +1,6 @@
 # Connect 4 Game
 
-Play game here: https://andrewavina.github.io/project1-game-connect4/
+Play game [here](https://andrewavina.github.io/project1-game-connect4/)
 
 # 2-Player Head to Head game
 First player to have 4 tokens in a row horizontally, vertically, and/or diagonally wins the game. 
