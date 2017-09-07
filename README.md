@@ -13,7 +13,8 @@ Choose which circle slot to place your token in by clicking on its column with y
 Once you click on the column you wish to drop your token into, the token will go to the bottom most available slot. 
 
 The game ends when either a player has at least 4 tokens in a row a.k.a. "connects 4", or if every slot is taken up without any connect 4's - in which case the game is a draw. 
---
+
+
 ### Development & Technologies
 
 This Connect 4 game is being built using HTML, CSS, JavaScript, and the jQuery library.
