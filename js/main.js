@@ -246,7 +246,7 @@ $(document).ready(function(){
             $row.fadeOut()
             setTimeout(function(){
                 $('#subhead').remove()
-                $messages.append("<h1 style='font-size: 6em; margin: 13vh 0 25px 0'>"+ winningToken + " wins!</h1>").fadeIn()
+                $messages.append("<h1 style='color: blue;font-size: 72px; margin: 0 auto'>"+ winningToken + " wins!</h1>").fadeIn()
                 playAgain()
             })
             winner = true //This stops the game.
@@ -257,7 +257,7 @@ $(document).ready(function(){
             $row.fadeOut()
             setTimeout(function(){
                 $('#subhead').remove() 
-                $messages.append("<h1 style='font-size: 6em; margin: 13vh 0 25px 0'>"+ winningToken + " wins!</h1>")
+                $messages.append("<h1 style='color: blue;font-size: 72px; margin: 0 auto'>"+ winningToken + " wins!</h1>")
                  playAgain()
              })
             winner = true //This stops the game.
