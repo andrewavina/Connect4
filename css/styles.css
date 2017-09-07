@@ -1,5 +1,5 @@
 body {
-    background: rgb(93, 87, 87);
+    background: rgb(157, 153, 153);
 }
 
 #title {
@@ -21,13 +21,6 @@ body {
     color: red;
 }
 
-.container {
-	width: 670px;
-	margin: 0 auto;
-    text-align: center;
-    clear: left;
-}
-
 #rules {
     margin: 0 auto;
     text-align: center;
@@ -42,18 +35,6 @@ body {
     font-size: 55px;
     width: 300px;
 }
-
-/* Game board vvvvvvv */
-.messages {
-	width: 100%;
-	margin: 0 auto;
-}
-
-.row {
-	margin: 30px auto;
-	padding: 20px 10px;
-}
-/* Game board ^^^^^^^ */
 
 #resetBtn {
     margin: 0 auto;
@@ -81,7 +62,7 @@ body {
     font-family: 'Baloo Tammudu', cursive;
     color: white;
     height: 100px;
-    font-size: 55px;
+    font-size: 30px;
     width: 300px;
 }
 
@@ -98,28 +79,21 @@ button {
     transition: all .2s ease;
 }
 
-button:hover {
-  	background-color: #FFDF00;
+/* Game board vvvvvvv */
+.container {
+	width: 670px;
+	margin: 0 auto;
+    text-align: center;
+    clear: left;
+}
+.messages {
+	width: 100%;
+	margin: 0 auto;
 }
 
-button:focus {
-	outline:0;
-}
-
-
-
-#red-btn, #yellow-btn {
-	display: none;
-}
-
-#pick-color {
-	display: none;
-}
-
-h2 {
-	font-size: 1.5em;
-	margin: 10px 0;
-	line-height: 1.5;
+.row {
+	margin: 30px auto;
+	padding: 20px 10px;
 }
 
 .circle {
@@ -136,21 +110,17 @@ h2 {
 	transition: all .25s ease;
 }
 
-.circle:hover, .circle:active {
-	border: 3px solid #797979;
-}
 
-.circle > p {
-	font-family: 'Inconsolata', Helvetica, Arial, sans-serif;
+.circle > p { /* draw pop up*/
+	font-family: 'Baloo Tammudu', cursive;
 	position: absolute;
-	font-size: 4em;
-	color: #fff;
+	font-size: 72px;
+	color: white;
 	top: 15px;
 	left: 35px;
 	display: block;
 	margin: 0 auto;
 	text-align: center;
-
 }
 
 .circle-background-color-yellow {
@@ -158,15 +128,8 @@ h2 {
 	border: 3px solid yellow;
 }
 
-.circle-background-color-yellow:hover {
-	border: 3px solid yellow;
-}
-
 .circle-background-color-red {
 	background-color: #C73D47;
 	border: 3px solid #C73D47;
 }
-
-.circle-background-color-red:hover {
-	border: 3px solid #C73D47;
-}
+/* Game board ^^^^^^^ */
