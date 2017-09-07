@@ -1,5 +1,13 @@
 console.log("JS loaded")
 
+//How to play button
+
+
+//Reset button function
+$("#resetBtn").click(function(){ 
+    location.reload()
+})
+
 //Global variables
 var player1 = {
         "tokenColor" : "yellow",
@@ -81,11 +89,13 @@ $(document).ready(function(){
             player1Moves.push(parseInt($(position).attr("data-value")))
             $(position).addClass(newClassname)
             $(position).attr("data-name", token) //If player 1 chose circle, give circle data-name "Player 1"
+            
         } else if (token === player2.dataName){
             player2Moves.push(parseInt($(position).attr("data-value")))
             $(position).addClass(newClassname)
             $(position).attr("data-name", token) //If player 2 chose circle, give circle data-name "Player 2"
             }
+
         }
     //Switch players function
     function switchPlayer(){ 
@@ -275,4 +285,5 @@ $(document).ready(function(){
             location.reload()
         })
         })
+    
     }})

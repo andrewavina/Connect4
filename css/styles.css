@@ -34,6 +34,7 @@ body {
     height: 100px;
     font-size: 55px;
     width: 300px;
+    cursor: pointer;
 }
 
 #resetBtn {
@@ -49,6 +50,7 @@ body {
     height: 100px;
     font-size: 55px;
     width: 300px;
+    cursor: pointer;
 }
 
 #score {
@@ -130,6 +132,7 @@ button {
 
 .circle-background-color-red {
 	background-color: #C73D47;
-	border: 3px solid #C73D47;
+    border: 3px solid #C73D47;
+    
 }
 /* Game board ^^^^^^^ */
