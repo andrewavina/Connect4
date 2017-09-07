@@ -2,14 +2,6 @@ body {
     background: rgb(93, 87, 87);
 }
 
-html {
-	font-family: "Montserrat", Futura, Helvetica, sans-serif;
-
-	-webkit-font-smoothing: subpixel-antialiased;
-    color: #333;
-    
-}
-
 #title {
     margin: 0 auto;
     text-align: center;
