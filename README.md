@@ -35,11 +35,13 @@ Fonts used: "Baloo Tammudu" from Google Fonts (<link href="https://fonts.googlea
 ## Installation Instructions
 This version of Connect 4 is playable on any web browser. 
 
+## Things to add
+- Game win tracker. Will need to figure out how to reset game board without reloading page. 
+- Reset button that resets game board without reloading page/game win tracker.
+- How to play info.
 
 ## Unsolved Problems
-- Scoreboard
-- Reset during game button
-
+- None so far
 
 ## Resources
 - W3schools.com for many of the styling and animation code.
