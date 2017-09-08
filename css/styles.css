@@ -41,6 +41,7 @@ body {
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 #rulesP {
     display: none;
     position: absolute;
@@ -55,6 +56,8 @@ body {
     display: block;
 }
 
+=======
+>>>>>>> 72d8a56c23365b1634448aee65512f27fc13a87b
 #resetBtn {
     margin: 0 auto;
     text-align: center;
@@ -69,7 +72,10 @@ body {
     font-size: 55px;
     width: 300px;
     cursor: pointer;
+<<<<<<< HEAD
     position: relative;
+=======
+>>>>>>> 72d8a56c23365b1634448aee65512f27fc13a87b
 }
 
 #score {
@@ -88,6 +94,22 @@ body {
     position: relative;
 }
 
+<<<<<<< HEAD
+=======
+
+button {
+	font-family: 'Baloo Tammudu', cursive;
+	font-size: 17px;
+	color: white;
+	background-color: blue;
+	padding: 15px 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 20px 0 30px 0;
+    transition: all .2s ease;
+}
+
+>>>>>>> 72d8a56c23365b1634448aee65512f27fc13a87b
 /* Game board vvvvvvv */
 .container {
 	width: 670px;
@@ -97,10 +119,14 @@ body {
 }
 .messages {
 	width: 100%;
+<<<<<<< HEAD
     margin: 0 auto;
     font-family: 'Baloo Tammudu', cursive;
     color: #F4EDED;
     font-size: 15px;
+=======
+	margin: 0 auto;
+>>>>>>> 72d8a56c23365b1634448aee65512f27fc13a87b
 }
 
 .row {
@@ -144,6 +170,7 @@ body {
 	background-color: #C73D47;
     border: 3px solid #C73D47;
     
+<<<<<<< HEAD
 }
 
 #play-again {
@@ -156,5 +183,7 @@ body {
     border-radius: 20px;
     margin: 20px 0 30px 0;
     transition: all .2s ease;
+=======
+>>>>>>> 72d8a56c23365b1634448aee65512f27fc13a87b
 }
 /* Game board ^^^^^^^ */

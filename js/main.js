@@ -8,6 +8,14 @@ $("#resetBtn").click(function(){
     location.reload()
 })
 
+//How to play button
+
+
+//Reset button function
+$("#resetBtn").click(function(){ 
+    location.reload()
+})
+
 //Global variables
 var player1 = {
         "tokenColor" : "yellow",
