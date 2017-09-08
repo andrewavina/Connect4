@@ -1,9 +1,11 @@
-![Imgur](https://i.imgur.com/YjIiOM5.png)
-
-Play game [here](https://andrewavina.github.io/project1-game-connect4/)
+![logo](https://i.imgur.com/YjIiOM5.png)
 
 # 2-Player Head to Head game
 First player to have 4 tokens in a row horizontally, vertically, and/or diagonally wins the game. 
+
+![gameboard](https://i.imgur.com/E5r9ZeD.png)
+
+Play game [here](https://andrewavina.github.io/project1-game-connect4/)
 
 ### How to Play:
 Player 1 plays with Yellow tokens and Player 2 plays with Red tokens.
@@ -23,6 +25,7 @@ Fonts used: "Baloo Tammudu" from Google Fonts (<link href="https://fonts.googlea
 
 
 ## Approach Taken
+- Trello board with user stories: https://trello.com/b/iuHne1Pt/project-1-connect-4
 - Began with user stories, wireframing on piece of paper, and looking at examples online
 - Wrote out/psuedocoded the needed objects and JavaScript functionality that would be needed to make the game work and meet user stories.
 - I started by quickly creating the HTML layout and elements for where the game board would be.
@@ -41,7 +44,13 @@ This version of Connect 4 is playable on any web browser.
 - How to play info.
 
 ## Unsolved Problems
-- None so far
+1. Random, unknown combos of less than 4 tokens in a row trigger a win when it shouldn't.
+2. Sometimes, when all the circles are full of tokens and it should be a draw, the draw function doesn't trigger. 
 
 ## Resources
-- W3schools.com for many of the styling and animation code.
+- W3schools.com for many of the styling and animation.
+- For ideas on logic:
+  - https://github.com/kenrick95/c4 (this one is more complex and has AI. This one uses Canvas.)
+  - https://github.com/borderpointer/connect-four (this one is more simple)
+  - https://www.youtube.com/watch?v=ra2_rKV0mDE (this is for tic tac toe, but same can be used for Connect 4.)
+
