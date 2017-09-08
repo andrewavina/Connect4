@@ -1,6 +1,6 @@
 ![logo](https://i.imgur.com/YjIiOM5.png)
 
-# 2-Player Head to Head game
+# 2-Player Head to Head, turn-based game
 First player to have 4 tokens in a row horizontally, vertically, and/or diagonally wins the game. 
 
 ![gameboard](https://i.imgur.com/E5r9ZeD.png)
