@@ -7,7 +7,7 @@ First player to have 4 tokens in a row horizontally, vertically, and/or diagonal
 
 Play game [here](https://andrewavina.github.io/project1-game-connect4/)
 
-### How to Play:
+## How to Play:
 Player 1 plays with Yellow tokens and Player 2 plays with Red tokens.
 
 Choose which circle slot to place your token in by clicking on its column with your mouse. 
@@ -17,7 +17,7 @@ Once you click on the column you wish to drop your token into, the token will go
 The game ends when either a player has at least 4 tokens in a row a.k.a. "connects 4", or if every slot is taken up without any connect 4's - in which case the game is a draw. 
 
 
-### Development & Technologies
+## Development & Technologies
 
 This Connect 4 game is being built using HTML, CSS, JavaScript, and the jQuery library.
 
