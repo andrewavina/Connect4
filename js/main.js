@@ -1,4 +1,4 @@
-console.log("JS loaded")
+console.log("JS loaded yes")
 
 //How to play button
 
