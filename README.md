@@ -49,6 +49,7 @@ This version of Connect 4 is playable on any web browser.
 
 ## Resources
 - W3schools.com for many of the styling and animation.
+- Background from: http://background.noemafranquicias.com/best-web-page-backgrounds/
 - For ideas on logic:
   - https://github.com/kenrick95/c4 (this one is more complex and has AI. This one uses Canvas.)
   - https://github.com/borderpointer/connect-four (this one is more simple)
