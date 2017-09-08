@@ -1,5 +1,9 @@
 body {
-    background: rgb(157, 153, 153);
+    /* background: rgb(157, 153, 153); */
+    background-image: url(background5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 #title {
@@ -14,7 +18,7 @@ body {
     color: white;
     height: 100px;
     font-size: 55px;
-    width: 300px;
+    width: 500px;
 }
 
 #title4 {
@@ -37,6 +41,20 @@ body {
     cursor: pointer;
 }
 
+#rulesP {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+#rulesDrop {
+    display: block;
+}
+
 #resetBtn {
     margin: 0 auto;
     text-align: center;
@@ -51,6 +69,7 @@ body {
     font-size: 55px;
     width: 300px;
     cursor: pointer;
+    position: relative;
 }
 
 #score {
@@ -66,19 +85,7 @@ body {
     height: 100px;
     font-size: 30px;
     width: 300px;
-}
-
-
-button {
-	font-family: 'Baloo Tammudu', cursive;
-	font-size: 17px;
-	color: white;
-	background-color: blue;
-	padding: 15px 40px;
-    border: 2px solid white;
-    border-radius: 20px;
-    margin: 20px 0 30px 0;
-    transition: all .2s ease;
+    position: relative;
 }
 
 /* Game board vvvvvvv */
@@ -90,7 +97,10 @@ button {
 }
 .messages {
 	width: 100%;
-	margin: 0 auto;
+    margin: 0 auto;
+    font-family: 'Baloo Tammudu', cursive;
+    color: #F4EDED;
+    font-size: 15px;
 }
 
 .row {
@@ -134,5 +144,17 @@ button {
 	background-color: #C73D47;
     border: 3px solid #C73D47;
     
+}
+
+#play-again {
+	font-family: 'Baloo Tammudu', cursive;
+	font-size: 30px;
+	color: black;
+	background-color: #B2ADAD;
+	padding: 15px 40px;
+    border: 10px solid black;
+    border-radius: 20px;
+    margin: 20px 0 30px 0;
+    transition: all .2s ease;
 }
 /* Game board ^^^^^^^ */

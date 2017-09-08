@@ -1,7 +1,7 @@
 console.log("JS loaded")
 
 //How to play button
-
+$
 
 //Reset button function
 $("#resetBtn").click(function(){ 
@@ -49,7 +49,7 @@ $(document).ready(function(){
                 $circle.addClass("col-" + j) //Adding specific column to each circle as a class
                 $circle.addClass("row-" + i) //Adding specific row to each circle as a class
                 $row.append($circle) //Adds circle to page
-                $row.css("background-color", "blue") //Gives the bracket game board color blue
+                $row.css("background-color", "#0404F2") //Gives the bracket game board color blue
             }
         }
         //Use data-value to give all circles a specific number between 0-41 (i.e. 42 total circles in play)
