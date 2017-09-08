@@ -1,7 +1,7 @@
 console.log("JS loaded")
 
 //How to play button
-$
+
 
 //Reset button function
 $("#resetBtn").click(function(){ 
@@ -29,7 +29,7 @@ var numOfPlayers = 2
     
 var winner = false
     
-var moves = 0 //To check if there is a draw 
+var moves = 0 //If this reaches 42, triggers a draw 
   
 var $pickColor = $("#pick-color")
 
@@ -42,25 +42,26 @@ var $messages = $(".messages")
 //MAIN GAME FUNCTION - all other functions are nested inside 
 $(document).ready(function(){
     makeBoard()
-    function makeBoard(){ //Create board function
+    //This function creates the board (6 rows, 7 columns, 42 circle slots)
+    function makeBoard(){ 
         for (var i = 0; i < 6; i+=1){ //Makes 6 rows and assign each a row number
             for (var j = 0; j < 7; j+=1){ //Makes 7 columns and assign each a column number
-                var $circle = $("<div class = 'circle' data-name = 'nothing'></div>") // Adding each circle as a sub <div> to the main "#row" <div> on page. Found idea to assign each circle with with the data-name "nothing". The data-name will change when that particular circle is chosen. 
+                var $circle = $("<div class = 'circle' data-name = 'nothing'></div>") // Adding each circle as a sub <div> to the main "#row" <div> on page. Found idea to assign each circle with with the data-name "nothing". The data-name will change when that particular circle is chosen to which ever player chose it and assign it the "dataName" from the global Player variable above. 
                 $circle.addClass("col-" + j) //Adding specific column to each circle as a class
                 $circle.addClass("row-" + i) //Adding specific row to each circle as a class
-                $row.append($circle) //Adds circle to page
+                $row.append($circle) //Adds circles to page
                 $row.css("background-color", "#0404F2") //Gives the bracket game board color blue
             }
         }
-        //Use data-value to give all circles a specific number between 0-41 (i.e. 42 total circles in play)
+        //Use data-value to give all circles a specific number between 0-41 (i.e. 42 total circles in play). This will be used by the checkWinner functions to determine if there are any connect 4's.
         var $circles = $(".circle")
-        for (var i = 0; i < $circles.length; i+=1){
+        for (var i = 0; i < $circles.length; i+=1){ //For loop to cycle through each circle to give it a number. 
             $circles.eq(i).attr("data-value", i) //Attach attribute "data-value" as class for all circles
         }
-            switchPlayer()
+            switchPlayer() //Still not sure why switchPlayer function has to be called here.
     }
     
-    //This function checks to see if the most bottom spot and up in each column is taken or not. If not, it drops the current player's token to the next available spot in the column if any. This function is only invoked after a click.
+    //This function checks to see if the most bottom spot and up in each column is taken or not. If not, it drops the current player's token to the next available spot in the column. If none are available, no token will be placed or changed. This function is only invoked after a click.
     function checkSpot(columnNumber, newClassname, token){
         //columnNumber is the column number of the spot the user clicked
         //newClassname is the class that the spot should take to add the token (circle.background-color) to.
@@ -72,7 +73,7 @@ $(document).ready(function(){
                 //Check from the last spot of the column array and if the most bottom is not taken, populate that spot.
                 for (var j = columnArray.length - 1; j > -1; j--){
                     if (columnArray[j].getAttribute("data-name") === "nothing"){
-                        makeMove(columnArray[j], newClassname, token)
+                        makeMove(columnArray[j], newClassname, token) //Call to function that places the player's actual token by switching the circle's "data-name".
                         break
                     }
                 }
@@ -97,26 +98,26 @@ $(document).ready(function(){
             }
 
         }
-    //Switch players function
+    //This function is what triggers the actual token placing process via checkSpot and checkWinner functions.
     function switchPlayer(){ 
         var $allCircles = $(".circle")
         var playerClick = 1 //Makes Player 1 be first player up
         //Nested function below only allows circles with data-name "nothing" able to be chosen by players
-        $.each($allCircles, function (index, value){
-            $allCircles.eq(index).click(function(){
+        $.each($allCircles, function (index, value){ //.each() method means we want to do something with each circle in the $allCircles variable. More info from online, "$.each provides a simple iterator and it will execute the callback function once for each element in array, group, etc."
+            $allCircles.eq(index).click(function(){ //.eq() method definition from online: "Reduce the set of matched elements to the one at the specified index." With index as parameter, "An integer indicating the 0-based position of the element."
                 if ($(this).attr("data-name") === "nothing"){
                     //Check if spot available for player 1's token
                     if (playerClick === 1){
-                        checkSpot($(this).attr("class").split(" ")[1], "circle-background-color-" + player1.tokenColor, player1.dataName)
-                        playerClick = 2
-                        moves +=1
-                        checkWinner ($(this).attr("class").split(" ")[1], player1.dataName) //Check for win after every turn.
+                        checkSpot($(this).attr("class").split(" ")[1], "circle-background-color-" + player1.tokenColor, player1.dataName) // if spot open, place player 1's token
+                        playerClick = 2 // changes to player 2's turn
+                        moves +=1 // add 1 quantity to the global "moves" variable that keeps track of moves up to 42.
+                        checkWinner ($(this).attr("class").split(" ")[1], player1.dataName) //Check for win after every turn. If player 1, pop up "Player 1 wins".
                     } 
                         else { //Check if spot available for player 2's token
-                            checkSpot($(this).attr("class").split(" ")[1], "circle-background-color-" + player2.tokenColor, player2.dataName)
-                            playerClick = 1
-                            moves +=1
-                            checkWinner($(this).attr("class").split(" ")[1], player2.dataName) //Check for win after every turn.
+                            checkSpot($(this).attr("class").split(" ")[1], "circle-background-color-" + player2.tokenColor, player2.dataName)// if spot open, place player 2's token
+                            playerClick = 1 // changes to player 1's turn
+                            moves +=1 // add 1 quantity to the global "moves" variable that keeps track of moves up to 42.
+                            checkWinner($(this).attr("class").split(" ")[1], player2.dataName) //Check for win after every turn. If player 2, pop up "Player 2 wins".
                         }
                     }
                 })
@@ -125,7 +126,7 @@ $(document).ready(function(){
     //Below are all functions that check for win and end the game
     //Call this function after each turn 
     function checkWinner (columnNumber, winningToken){
-    //"columnNumber" is the number of the column that a token has been made,
+    //"columnNumber" is the number of the column that a token has been placed in.
     //"winningToken" is who made the token.
         //3 calls below check for wins horizontally, vertically, and diagonally
         checkColumn(columnNumber, winningToken)
