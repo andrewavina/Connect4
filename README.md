@@ -1,3 +1,4 @@
+[Imgur](https://i.imgur.com/YjIiOM5.png)
 # Connect 4 Game
 
 Play game [here](https://andrewavina.github.io/project1-game-connect4/)
