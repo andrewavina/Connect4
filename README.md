@@ -34,7 +34,7 @@ Resources:
 ## Approach Taken
 - Trello board with user stories: https://trello.com/b/iuHne1Pt/project-1-connect-4
 - Began with user stories, wireframing on piece of paper, and looking at examples online
-  - ![drawing](https://i.imgur.com/nE9038Ys.jpg?2)
+  - ![drawing] (https://i.imgur.com/nE9038Yb.jpg?2))
 - Wrote out/psuedocoded the needed objects and JavaScript functionality that would be needed to make the game work and meet user stories.
 - I started by quickly creating the HTML layout and elements for where the game board would be.
 - Shortly after, moved to creating the game board and having the tokens appear on click.
