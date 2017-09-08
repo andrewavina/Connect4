@@ -1,5 +1,9 @@
 body {
-    background: rgb(93, 87, 87);
+    /* background: rgb(157, 153, 153); */
+    background-image: url(background5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 #title {
@@ -14,18 +18,11 @@ body {
     color: white;
     height: 100px;
     font-size: 55px;
-    width: 300px;
+    width: 500px;
 }
 
 #title4 {
     color: red;
-}
-
-.container {
-	width: 670px;
-	margin: 0 auto;
-    text-align: center;
-    clear: left;
 }
 
 #rules {
@@ -41,19 +38,22 @@ body {
     height: 100px;
     font-size: 55px;
     width: 300px;
+    cursor: pointer;
 }
 
-/* Game board vvvvvvv */
-.messages {
-	width: 100%;
-	margin: 0 auto;
+#rulesP {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
 }
 
-.row {
-	margin: 30px auto;
-	padding: 20px 10px;
+#rulesDrop {
+    display: block;
 }
-/* Game board ^^^^^^^ */
 
 #resetBtn {
     margin: 0 auto;
@@ -68,6 +68,8 @@ body {
     height: 100px;
     font-size: 55px;
     width: 300px;
+    cursor: pointer;
+    position: relative;
 }
 
 #score {
@@ -81,67 +83,29 @@ body {
     font-family: 'Baloo Tammudu', cursive;
     color: white;
     height: 100px;
-    font-size: 55px;
+    font-size: 30px;
     width: 300px;
+    position: relative;
 }
 
-
-button {
-	font-family: "Montserrat", Futura, Helvetica, sans-serif;;
-	font-size: 1.25em;
-	color: #fff;
-	background-color: #3DC4A7;
-	padding: 15px 40px;
-    border: none;
-    border-radius: 5px;
-    margin: 20px 0 30px 0;
-    transition: all .2s ease;
+/* Game board vvvvvvv */
+.container {
+	width: 670px;
+	margin: 0 auto;
+    text-align: center;
+    clear: left;
+}
+.messages {
+	width: 100%;
+    margin: 0 auto;
+    font-family: 'Baloo Tammudu', cursive;
+    color: #F4EDED;
+    font-size: 15px;
 }
 
-button:hover {
-  	background-color: #FFDF00;
-}
-
-button:focus {
-	outline:0;
-}
-
-#submit {
-	margin-left: 10px;
-}
-
-#red-btn, #yellow-btn {
-	display: none;
-}
-
-input {
-	font-family: "Montserrat", Futura, Helvetica, sans-serif;;
-	font-size: 1.25em;
-	padding: 15px 30px;
-	background-color: #f4f4f4;
-	border: 1px solid #B3B3B3;
-	border-radius: 5px;
-	margin: 10px auto;
-	transition: all .25s ease;
-}
-
-input:focus {
-	outline: 0;
-	border: 1px solid #333;
-}
-
-#disclaimer {
-	display: none;
-}
-
-#pick-color {
-	display: none;
-}
-
-h2 {
-	font-size: 1.5em;
-	margin: 10px 0;
-	line-height: 1.5;
+.row {
+	margin: 30px auto;
+	padding: 20px 10px;
 }
 
 .circle {
@@ -158,21 +122,17 @@ h2 {
 	transition: all .25s ease;
 }
 
-.circle:hover, .circle:active {
-	border: 3px solid #797979;
-}
 
-.circle > p {
-	font-family: 'Inconsolata', Helvetica, Arial, sans-serif;
+.circle > p { /* draw pop up*/
+	font-family: 'Baloo Tammudu', cursive;
 	position: absolute;
-	font-size: 4em;
-	color: #fff;
+	font-size: 72px;
+	color: white;
 	top: 15px;
 	left: 35px;
 	display: block;
 	margin: 0 auto;
 	text-align: center;
-
 }
 
 .circle-background-color-yellow {
@@ -180,15 +140,21 @@ h2 {
 	border: 3px solid yellow;
 }
 
-.circle-background-color-yellow:hover {
-	border: 3px solid yellow;
-}
-
 .circle-background-color-red {
 	background-color: #C73D47;
-	border: 3px solid #C73D47;
+    border: 3px solid #C73D47;
+    
 }
 
-.circle-background-color-red:hover {
-	border: 3px solid #C73D47;
+#play-again {
+	font-family: 'Baloo Tammudu', cursive;
+	font-size: 30px;
+	color: black;
+	background-color: #B2ADAD;
+	padding: 15px 40px;
+    border: 10px solid black;
+    border-radius: 20px;
+    margin: 20px 0 30px 0;
+    transition: all .2s ease;
 }
+/* Game board ^^^^^^^ */
