@@ -1,11 +1,11 @@
 ![logo](https://i.imgur.com/YjIiOM5.png)
 
+Play game [here](https://andrewavina.github.io/project1-game-connect4/)
+
 # 2-Player Head to Head, turn-based game
 First player to have 4 tokens in a row horizontally, vertically, and/or diagonally wins the game. 
 
 ![gameboard](https://i.imgur.com/E5r9ZeD.png)
-
-Play game [here](https://andrewavina.github.io/project1-game-connect4/)
 
 ## How to Play:
 Player 1 plays with Yellow tokens and Player 2 plays with Red tokens.
